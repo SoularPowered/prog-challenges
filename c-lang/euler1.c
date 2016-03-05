@@ -7,13 +7,13 @@ Description:   Project Euler Challenge #1
 Usage:         Run program
 ****************************************************************************/
 
-#include <stdin.h>
+#include <stdio.h>
 
 int sumMults(int a, int b, int max);
 
 int main(int argc, char* argv[]) {
   
-  printf("%d", sumMults(3, 5, 1000));
+  printf("%d\n\n", sumMults(3, 5, 1000));
 
   return 0;
 }
@@ -21,9 +21,10 @@ int main(int argc, char* argv[]) {
 
 int sumMults(int a, int b, int max) {
   int sum = 0;
-  for (int i = a; i < max; i += a)
+  int i;
+  for (i = a; i < max; i += a)
     sum += i;
-  for (i = b; i < size; i += b) {
+  for (i = b; i < max; i += b) {
     if (!(i % a == 0))
       sum += i;
   }
